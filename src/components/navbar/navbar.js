@@ -1,9 +1,18 @@
 import { Button, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import CartWidget from '../widgets/CartWidget';
 
 const NavbarComponent = () => {
   return (
     <Navbar bg="danger" expand="lg">
-      <Navbar.Brand href="#home" variant="text-white">Red panda</Navbar.Brand>
+      <Navbar.Brand href="#home" variant="text-white">
+        <img
+          src="/images/logo.png"
+          width="50px"
+          height="50px"
+          className="d-inline-block align-top"
+          alt=""
+        />{' '}
+        Red panda</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
@@ -19,6 +28,7 @@ const NavbarComponent = () => {
           </NavDropdown>
           <Nav.Link href="#contacto">Contacto</Nav.Link>
         </Nav>
+        <CartWidget />
         <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
           <Button variant="dark">Search</Button>
