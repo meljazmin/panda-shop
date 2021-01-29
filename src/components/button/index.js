@@ -8,7 +8,7 @@ const ButtonComponent = ({ text, children }) => {
     return (
         <div>
             {children}
-            <button onClick="{saludar}">{text}</button>
+            <button onClick={saludar}>{text}</button>
 
         </div>
     )
