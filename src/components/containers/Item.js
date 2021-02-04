@@ -16,9 +16,9 @@ const Item = ({ product }) => {
                 <h6>${product.price}</h6>
             </div>
             <Modal size="lg" show={showModal} onHide={onHide}>
-                <Modal.Header>
+                {/* <Modal.Header>
                     <Modal.Title>{product.title}</Modal.Title>
-                </Modal.Header>
+                </Modal.Header> */}
                 <Modal.Body>
                     <ItemDetail product={product} />
                 </Modal.Body>

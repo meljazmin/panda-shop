@@ -31,10 +31,10 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     }
 
     return (
-        <div className="p-1 border d-flex flex-column text-center" style={{ width: 'fit-content', opacity: (stock > 0 ? 1 : 0.5) }}>
+        <div className="p-1 m-1 d-flex flex-column text-center w-100" style={{ width: 'fit-content', opacity: (stock > 0 ? 1 : 0.5) }}>
             <p>Item count <span className={`badge badge-${stock > 0 ? 'success' : 'danger'}`}>Stock {stock}</span></p>
             <div className="border m-3 p-2 d-flex flex-row">
-                <button className="btn btn-primary" onClick={decreaseCountHandler}><FaMinus /></button><label className="ml-5 mr-5">{count}</label><button className="btn btn-primary" onClick={increaseCountHandler}><FaPlus /></button>
+                <button className="btn btn-primary" onClick={decreaseCountHandler}><FaMinus /></button><label className="ml-auto mr-auto">{count}</label><button className="btn btn-primary" onClick={increaseCountHandler}><FaPlus /></button>
             </div>
             <button className="btn btn-danger" onClick={addItemHandler}>Agregar al carrito</button>
         </div>

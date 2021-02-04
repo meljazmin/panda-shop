@@ -21,7 +21,7 @@ const App = () => {
       {/* <ButtonComponent text={'Agregar producto al carrito'} /> */}
       <ItemListContainer greeting={"Bienvenido/a!"} />
 
-      <ItemDetailContainer />
+      {/* <ItemDetailContainer /> */}
     </>
 
   );
