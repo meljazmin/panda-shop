@@ -1,5 +1,6 @@
 import { Button, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import CartWidget from '../widgets/CartWidget';
+import './navBar.scss';
 
 const NavbarComponent = () => {
   return (
@@ -31,7 +32,7 @@ const NavbarComponent = () => {
         <CartWidget />
         <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="dark">Search</Button>
+          <Button variant="dark" className="buttonSearch">Search</Button>
         </Form>
       </Navbar.Collapse>
     </Navbar>
