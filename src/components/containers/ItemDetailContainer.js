@@ -1,26 +1,38 @@
 import ItemDetail from "./ItemDetail";
 import productList from '../../products';
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Jumbotron } from "react-bootstrap";
 
 const request = new Promise((res) => {
     setTimeout(() => {
-        const index = Math.ceil(Math.random() * productList.length - 1);
-        res(productList[index]);
+        res(productList);
     }, 2000);
 })
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState({});
-
+    const { id } = useParams();
     useEffect(() => {
         request.then(res => {
-            setProduct(res);
+            if (id) {
+                setProduct(res.find(product => product.id.toString() === id));
+            } else {
+                setProduct({});
+            }
         });
-    }, []);
+    }, [id]);
 
     return (
         <>
-            <ItemDetail product={product} />
+            {product &&
+                <ItemDetail product={product} />
+            }
+            {!product && 
+                <Jumbotron>
+                    <h3>No existe producto con id {id}</h3>
+                </Jumbotron>
+            }
         </>
     )
 }

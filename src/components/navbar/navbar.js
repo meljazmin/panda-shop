@@ -1,11 +1,26 @@
 import { Button, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import CartWidget from '../widgets/CartWidget';
 import './navBar.scss';
+import categoryList from '../../categories';
+import { useEffect, useState } from 'react';
+
+const request = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(categoryList);
+  }, 2000);
+});
 
 const NavbarComponent = () => {
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    request.then(data => {
+      setCategories(data);
+    });
+  }, []);
   return (
     <Navbar bg="danger" expand="lg">
-      <Navbar.Brand href="#home" variant="text-white">
+      <Navbar.Brand href="#home" variant="text-white" as={Link} to={'/'}>
         <img
           src="/images/logo.png"
           width="50px"
@@ -17,15 +32,14 @@ const NavbarComponent = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#inicio">Inicio</Nav.Link>
+          <Nav.Link as={Link} to={'/'}>Inicio</Nav.Link>
           <Nav.Link href="#quienes-somos">Quienes somos</Nav.Link>
           <NavDropdown title="Productos" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Cocina</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Accesorios</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Accesorios de viaje</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Salud y belleza</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Oficina</NavDropdown.Item>
-            <NavDropdown.Divider />
+            {
+              categories.map(category => {
+                return <NavDropdown.Item key={category.id} as={Link} to={`/category/${category.id}`} >{category.title}</NavDropdown.Item>
+              })
+            }
           </NavDropdown>
           <Nav.Link href="#contacto">Contacto</Nav.Link>
         </Nav>
