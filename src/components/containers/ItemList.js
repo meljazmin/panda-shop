@@ -27,7 +27,7 @@ const ItemList = () => {
 
     return (
         <div className="container border mt-1 mb-1">
-            <h1>Productos</h1>
+            <h1 class="text-center">Productos</h1>
             <div className="d-flex flex-wrap justify-content-around m-5">
                 {
                     products.map(product => {

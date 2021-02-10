@@ -20,7 +20,7 @@ const NavbarComponent = () => {
   }, []);
   return (
     <Navbar bg="danger" expand="lg">
-      <Navbar.Brand href="#home" variant="text-white" as={Link} to={'/'}>
+      <Navbar.Brand href="#home" variant="text-white" as={Link} to={'/'} class="text-center">
         <img
           src="/images/logo.png"
           width="50px"
