@@ -28,6 +28,11 @@ const App = () => {
         <Route path="/item/:id">
           <ItemDetailContainer />
         </Route>
+        <Route path="/cart/">
+          <>
+            <p>Soy el cart</p>
+          </>
+        </Route>
         {/* <ButtonComponent text={'Agregar producto al carrito'} /> */}
 
         {/* <ItemDetailContainer /> */}
