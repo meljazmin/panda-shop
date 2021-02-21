@@ -1,0 +1,19 @@
+footer {
+    background-color: #e7475c;
+    font-family: "Roboto", sans-serif;
+    li {
+        list-style: none;
+
+        .link {
+            color: black;
+        }
+    }
+}
+
+.faIcons {
+    color: white;
+
+    &:hover {
+        color: #521423;
+    }
+}

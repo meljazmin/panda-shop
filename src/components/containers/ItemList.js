@@ -5,9 +5,8 @@ import { useParams } from 'react-router-dom';
 import { Jumbotron } from 'react-bootstrap';
 
 let request = new Promise((resolve, reject) => {
-    setTimeout(() => {
+    
         resolve(productsMock);
-    }, 2000)
 });
 
 const ItemList = () => {
@@ -26,8 +25,8 @@ const ItemList = () => {
     }, [categoryId]);
 
     return (
-        <div className="container border mt-1 mb-1">
-            <h1 class="text-center">Productos</h1>
+        <div className="container mt-1 mb-1">
+            <h1 className="text-center">Productos</h1>
             <div className="d-flex flex-wrap justify-content-around m-5">
                 {
                     products.map(product => {

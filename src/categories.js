@@ -15,7 +15,7 @@ const categories = [
         id: 5, title: 'Accesorios'
     },
     {
-        id: 6, title: 'Viaje'
+        id: 6, title: 'Accesorios de viaje'
     },
     {
         id: 7, title: 'Salud y belleza'

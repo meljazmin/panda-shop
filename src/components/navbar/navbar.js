@@ -19,8 +19,8 @@ const NavbarComponent = () => {
     });
   }, []);
   return (
-    <Navbar bg="danger" expand="lg">
-      <Navbar.Brand href="#home" variant="text-white" as={Link} to={'/'} class="text-center">
+    <Navbar  expand="lg" className="navBar">
+      <Navbar.Brand href="#home" variant="text-white" as={Link} to={'/'} className="text-center">
         <img
           src="/images/logo.png"
           width="50px"
@@ -41,12 +41,12 @@ const NavbarComponent = () => {
               })
             }
           </NavDropdown>
-          <Nav.Link href="#contacto">Contacto</Nav.Link>
+          <Nav.Link as={Link} to={'/contacto'}>Contacto</Nav.Link>
         </Nav>
         <CartWidget />
         <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="dark" className="buttonSearch">Search</Button>
+          <FormControl type="text" placeholder="Buscar" className="mr-sm-2" />
+          <Button variant="dark" className="buttonSearch">Buscar</Button>
         </Form>
       </Navbar.Collapse>
     </Navbar>

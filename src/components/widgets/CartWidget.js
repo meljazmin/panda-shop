@@ -1,12 +1,13 @@
 import { Nav } from "react-bootstrap";
-import { FaTwitter, FaCartArrowDown } from "react-icons/fa";
+import { FaTwitter, FaShoppingCart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 
 const Cart = () => {
     return (
         <Nav>
-            <Nav.Link><FaCartArrowDown /></Nav.Link>
+            <Nav.Link as={Link} to={"/cart"}><FaShoppingCart size={30} /></Nav.Link>
         </Nav>
     )
 }
