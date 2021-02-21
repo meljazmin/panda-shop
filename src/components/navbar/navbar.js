@@ -32,7 +32,7 @@ const NavbarComponent = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav"  />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="m-auto navLinks">
-          <Nav.Link as={Link} to={'/'}>Inicio</Nav.Link>
+          <Nav.Link as={Link} to={'/'} className="hvr-underline-from-center">Inicio</Nav.Link>
           <NavDropdown title="Productos" id="basic-nav-dropdown">
             {
               categories.map(category => {
@@ -40,7 +40,7 @@ const NavbarComponent = () => {
               })
             }
           </NavDropdown>
-          <Nav.Link as={Link} to={'/contacto'}>Contacto</Nav.Link>
+          <Nav.Link as={Link} to={'/contacto'} className="hvr-underline-from-center">Contacto</Nav.Link>
         </Nav>
         <CartWidget />
         <Form inline>

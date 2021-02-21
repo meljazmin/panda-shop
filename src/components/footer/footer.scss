@@ -1,9 +1,12 @@
+// body{
+//     padding-bottom: 100px; 
+// }
+
 footer {
-    background-color: #e7475c;
+    background-color: #fc6b5e;
     font-family: "Roboto", sans-serif;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    
+    
     li {
         list-style: none;
 
@@ -19,4 +22,9 @@ footer {
     &:hover {
         color: #521423;
     }
+}
+
+
+.footer-description{
+    background-color: #fc7a6f;
 }

@@ -33,7 +33,7 @@ const ItemDetail = ({ product }) => {
                         </div>
                         <div className="row mt-2">
                             <div className="col-12">
-                                <p className="text-center">{product.description}</p>
+                                <h4 className="text-center">{product.description}</h4>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@ const ItemDetail = ({ product }) => {
                         {count > 0 &&
                             <>
                                 <p>Ha seleccionado {count} item(s) de este producto</p>
-                                <button type="button" className="btn btn-danger" onClick={addToCart} >Finalizar compra</button>
+                                <button type="button" className="btn button2" onClick={addToCart} >Finalizar compra</button>
                             </>
                         }
                     </div>

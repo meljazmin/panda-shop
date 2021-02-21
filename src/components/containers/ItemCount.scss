@@ -1,0 +1,7 @@
+@import 'bootstrap';
+
+.badge-pink{
+    @extend .badge-success;
+    color: pink;
+    background-color: #e7475c;
+}

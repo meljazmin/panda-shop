@@ -17,13 +17,18 @@ export default function CartProvider({ defaultValue = [], children }) {
     }, [cache]);
 
     const getItemById = (itemId) => {
-        return cache.find(item => item.item.id === itemId);
+        return cache.find(item => item.item.id === parseInt(itemId));
     }
 
     const addItem = (item, quantity) => {
-        if (isInCart(item.id)) throw Error('El item ya fue agregado al carrito');
         setCache((cart) => {
-            return [...cart, { item, quantity }];
+            if (isInCart(item.id)) {
+                const index = cart.findIndex(i => i.item.id === item.id);
+                cart[index].quantity += quantity;
+                return cart;
+            } else {
+                return [...cart, { item, quantity }];
+            }
         });
     }
 
@@ -31,7 +36,7 @@ export default function CartProvider({ defaultValue = [], children }) {
         let item = getItemById(itemId);
         if (item) {
             setCache((cart) => {
-                return cart.filter(i => i.id !== item.id);
+                return cart.filter(i => i.item.id !== item.item.id);
             });
         }
     }
@@ -44,8 +49,19 @@ export default function CartProvider({ defaultValue = [], children }) {
         return getItemById(itemId) ? true : false;
     }
 
+    const changeItemQuantity = (id, quantity) => {
+        const item = getItemById(id);
+        if (item) {
+            setCache((cart) => {
+                const index = cart.findIndex(i => i.item.id === item.item.id);
+                cart[index].quantity = parseInt(quantity);
+                return cart;
+            });
+        }
+    }
+
     return (
-        <CartContext.Provider value={{ addItem, removeItem, clear, isInCart, cart: cache }}>
+        <CartContext.Provider value={{ addItem, removeItem, clear, isInCart, changeItemQuantity, cart: cache }}>
             { children}
         </CartContext.Provider >
     )

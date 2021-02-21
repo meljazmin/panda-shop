@@ -1,9 +1,17 @@
-.button2{
+.button2 {
     background-color: #e7475c;
     margin-bottom: 20px;
-    margin-left: 10px;  
-    &:hover{
-        color: white; 
+    margin-left: 10px;
+    font-family: "Roboto", sans-serif;
+    color: black;
+    &:hover {
+        color: white;
         background-color: #fc6b5e;
     }
+}
+
+
+input:hover{
+    border: 3px solid #fc6b5e;
+ 
 }

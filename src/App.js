@@ -10,6 +10,8 @@ import CartContainer from './components/containers/CartContainer';
 import CartContext from './context/CartContext';
 import FooterComponent from './components/footer/footer';
 import Contacto from './components/contacto/contacto';
+import WhatsApp from './components/whatsapp/whatsapp';
+import NotFound from './components/common/NotFound';
 
 
 
@@ -20,25 +22,27 @@ const App = () => {
     <CartContext>
       <BrowserRouter>
         <NavbarComponent />
-        {/* <Route path="*" children={<div>Not found</div>} /> */}
-
-        <Switch>
-          <Route exact path="/">
-            <ItemListContainer greeting={"Bienvenido/a!"} />
-          </Route>
-          <Route path="/category/:categoryId">
-            <ItemListContainer />
-          </Route>
-          <Route path="/item/:id">
-            <ItemDetailContainer />
-          </Route>
-          <Route path="/cart/">
-            <CartContainer />
-          </Route>
-          <Route path="/contacto">
-            <Contacto />
-          </Route>
-        </Switch>
+        <div style={{minHeight: '439px'}}>
+          <Switch>
+            <Route exact path="/">
+              <ItemListContainer greeting={"Bienvenido/a!"} />
+            </Route>
+            <Route path="/category/:categoryId">
+              <ItemListContainer />
+            </Route>
+            <Route path="/item/:id">
+              <ItemDetailContainer />
+            </Route>
+            <Route path="/cart/">
+              <CartContainer />
+            </Route>
+            <Route path="/contacto">
+              <Contacto />
+            </Route>
+            <Route path="*" children={<NotFound />} />
+          </Switch>
+        </div>
+        <WhatsApp />
         <FooterComponent />
       </BrowserRouter>
     </CartContext>
