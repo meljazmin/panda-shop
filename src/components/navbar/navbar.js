@@ -29,11 +29,10 @@ const NavbarComponent = () => {
           alt=""
         />{' '}
         Red panda</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Toggle aria-controls="basic-navbar-nav"  />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
+        <Nav className="m-auto navLinks">
           <Nav.Link as={Link} to={'/'}>Inicio</Nav.Link>
-          <Nav.Link href="#quienes-somos">Quienes somos</Nav.Link>
           <NavDropdown title="Productos" id="basic-nav-dropdown">
             {
               categories.map(category => {

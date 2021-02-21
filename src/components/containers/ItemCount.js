@@ -36,7 +36,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
             <div className="m-3 p-2 d-flex flex-row">
                 <button className="btn btn-primary" onClick={decreaseCountHandler}><FaMinus /></button><label className="ml-auto mr-auto">{count}</label><button className="btn btn-primary" onClick={increaseCountHandler}><FaPlus /></button>
             </div>
-            <button className="btn btn-danger" onClick={addItemHandler}>Agregar al carrito</button>
+            <button className="btn button2" onClick={addItemHandler}>Agregar al carrito</button>
         </div>
     );
 }
