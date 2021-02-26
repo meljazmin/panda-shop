@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/red-panda/static/css/main.d18d5e90.chunk.css",
+    "main.js": "/red-panda/static/js/main.234126d0.chunk.js",
+    "main.js.map": "/red-panda/static/js/main.234126d0.chunk.js.map",
+    "runtime-main.js": "/red-panda/static/js/runtime-main.ff1b7264.js",
+    "runtime-main.js.map": "/red-panda/static/js/runtime-main.ff1b7264.js.map",
+    "static/css/2.150d169a.chunk.css": "/red-panda/static/css/2.150d169a.chunk.css",
+    "static/js/2.e0af9f96.chunk.js": "/red-panda/static/js/2.e0af9f96.chunk.js",
+    "static/js/2.e0af9f96.chunk.js.map": "/red-panda/static/js/2.e0af9f96.chunk.js.map",
+    "static/js/3.92370076.chunk.js": "/red-panda/static/js/3.92370076.chunk.js",
+    "static/js/3.92370076.chunk.js.map": "/red-panda/static/js/3.92370076.chunk.js.map",
+    "index.html": "/red-panda/index.html",
+    "static/css/2.150d169a.chunk.css.map": "/red-panda/static/css/2.150d169a.chunk.css.map",
+    "static/css/main.d18d5e90.chunk.css.map": "/red-panda/static/css/main.d18d5e90.chunk.css.map",
+    "static/js/2.e0af9f96.chunk.js.LICENSE.txt": "/red-panda/static/js/2.e0af9f96.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/red-panda/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ff1b7264.js",
+    "static/css/2.150d169a.chunk.css",
+    "static/js/2.e0af9f96.chunk.js",
+    "static/css/main.d18d5e90.chunk.css",
+    "static/js/main.234126d0.chunk.js"
+  ]
+}
