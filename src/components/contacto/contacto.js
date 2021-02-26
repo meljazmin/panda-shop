@@ -1,4 +1,5 @@
 import './contacto.scss';
+import '../containers/item.scss';
 
 const Contacto = () => {
     return (
@@ -31,7 +32,7 @@ const Contacto = () => {
                         </div>
                         <div className="form-group">
                             <label for="mensaje">Mensaje:</label>
-                            <textarea class="form-control" name="mensaje" rows="10" cols="70"></textarea>
+                            <textarea className="form-control" name="mensaje" rows="10" cols="70"></textarea>
                         </div>
                         <div className="form-group">
                             <div className="form-check">

@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import ItemCount from "./ItemCount";
 import { Link, useHistory } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
+import SweetAlert from 'react-bootstrap-sweetalert';
+
 
 const ItemDetail = ({ product }) => {
     const [count, setCount] = useState(0);
@@ -19,6 +21,10 @@ const ItemDetail = ({ product }) => {
         } catch (e) {
             alert(e);
         }
+    }
+
+    const mostrarAlerta = () => {
+        SweetAlert("Producto agregado al carrito");
     }
 
     return (
@@ -45,8 +51,15 @@ const ItemDetail = ({ product }) => {
                         }
                         {count > 0 &&
                             <>
+
                                 <p>Ha seleccionado {count} item(s) de este producto</p>
-                                <button type="button" className="btn button2" onClick={addToCart} >Finalizar compra</button>
+                                <Link to={'/'}>
+                                    <button type="button" className="btn button2" onClick={addToCart}>Seguir comprando</button>
+                                </Link>
+                                <Link to="/cart">
+                                    <button type="button" className="btn button2" onClick={addToCart} >Finalizar compra</button>
+
+                                </Link>
                             </>
                         }
                     </div>

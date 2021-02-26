@@ -6,16 +6,13 @@ import ItemListContainer from './components/containers/ItemListContainer';
 import ButtonComponent from './components/button';
 import ItemDetailContainer from './components/containers/ItemDetailContainer';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import CartContainer from './components/containers/CartContainer';
+import CartContainer from './components/containers/Cart';
 import CartContext from './context/CartContext';
 import FooterComponent from './components/footer/footer';
 import Contacto from './components/contacto/contacto';
 import WhatsApp from './components/whatsapp/whatsapp';
 import NotFound from './components/common/NotFound';
 
-
-
-let estilos = { color: 'violet', background: 'red' }
 const App = () => {
 
   return (

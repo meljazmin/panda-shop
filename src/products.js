@@ -1,42 +1,42 @@
 let products = [{
-    id: 1, stock: 10, title: 'Lampara de gato', description: 'Hermosa lampara de diferentes colores', price: 500.0, pictureUrl: 'cat-lamp.jpg', idCategory: 1
+    id: 1, stock: 10, title: 'Lampara gato', description: 'Hermosa lampara de diferentes colores', price: 500.0, pictureUrl: 'cat-lamp.jpg', idCategory: 1
 }, {
-    id: 2, stock: 10, title: 'Lampara de luna', description: 'Lampara luna de diferentes colores', price: 1300.0, pictureUrl: 'lampara-luna.jpg', idCategory: 1
+    id: 2, stock: 10, title: 'Lampara luna', description: 'Lampara luna de diferentes colores', price: 1300.0, pictureUrl: 'lampara-luna.jpg', idCategory: 1
 }, {
-    id: 3, stock: 10, title: 'Lampara de estrella', description: 'Lampara estrella', price: 850.0, pictureUrl: 'lampara-estrella.jpg', idCategory: 1
+    id: 3, stock: 10, title: 'Lampara estrella', description: 'Lampara estrella de diferentes colores', price: 850.0, pictureUrl: 'lampara-estrella.jpg', idCategory: 1
 },
 {
     id: 4, stock: 20, title: 'Minibroches', description: 'Lindos y pequeños broches multicolor', price: 25.0, pictureUrl: 'mini-broches.jpg', idCategory: 2
 }, {
-    id: 5, stock: 20, title: 'Minibroches madera', description: 'Lindos y pequeños broches', price: 30.0, pictureUrl: 'broches-madera.jpg', idCategory: 2
+    id: 5, stock: 20, title: 'Minibroches madera', description: 'Lindos y pequeños broches de madera', price: 30.0, pictureUrl: 'broches-madera.jpg', idCategory: 2
 }, {
-    id: 6, stock: 20, title: 'Minibroches plástico', description: 'Lindos y pequeños broches', price: 20.0, pictureUrl: 'broches-plastico.jpg', idCategory: 2
+    id: 6, stock: 20, title: 'Minibroches plástico', description: 'Lindos y pequeños broches de plástico', price: 20.0, pictureUrl: 'broches-plastico.jpg', idCategory: 2
 },
 {
-    id: 7, stock: 30, title: 'Pez pisapapeles', description: 'Para que no se vuelen tus papeles', price: 78.0, pictureUrl: 'pez-pisapapeles.jpg', idCategory: 3
+    id: 7, stock: 30, title: 'Pez pisapapeles', description: 'Para que no se vuelen tus papeles!', price: 78.0, pictureUrl: 'pez-pisapapeles.jpg', idCategory: 3
 },
 {
-    id: 8, stock: 30, title: 'Gato pisapapeles', description: 'Para que no se vuelen tus papeles', price: 78.0, pictureUrl: 'gato-pisapapeles.jpg', idCategory: 3
+    id: 8, stock: 30, title: 'Gato pisapapeles', description: 'Para que no se vuelen tus papeles!', price: 78.0, pictureUrl: 'gato-pisapapeles.jpg', idCategory: 3
 },
 {
-    id: 9, stock: 30, title: 'Estrella pisapapeles', description: 'Para que no se vuelen tus papeles', price: 78.0, pictureUrl: 'estrella-pisapapeles.jpg', idCategory: 3
+    id: 9, stock: 30, title: 'Estrella pisapapeles', description: 'Para que no se vuelen tus papeles!', price: 78.0, pictureUrl: 'estrella-pisapapeles.jpg', idCategory: 3
 },
 
 {
     id: 10, stock: 30, title: 'Etiquetas para frascos', description: 'Para identificar tus frascos', price: 100.0, pictureUrl: 'etiquetas-frascos.jpg', idCategory: 4
 },
 {
-    id: 11, stock: 30, title: 'Palillos para comer choclo', description: 'Palillos de plastico para que no te quemes', price: 60.0, pictureUrl: 'palillos-choclo.jpg', idCategory: 4
+    id: 11, stock: 30, title: 'Palillos para comer choclo', description: 'Palillos de plastico, material resistente!', price: 60.0, pictureUrl: 'palillos-choclo.jpg', idCategory: 4
 },
 {
-    id: 12, stock: 30, title: 'Copas de vino de colores', description: 'Juego de 6 copas de vino de colores', price: 78.0, pictureUrl: 'copas-vino-colores.jpg', idCategory: 4
+    id: 12, stock: 30, title: 'Copas de vino de colores', description: 'Juego de 6 copas de vino de colores diferentes', price: 3000.0, pictureUrl: 'copas-vino-colores.jpg', idCategory: 4
 },
 
 {
     id: 13, stock: 30, title: 'Protector de cables animalitos', description: 'Para proteger tus cables y que no se dañen', price: 100.0, pictureUrl: 'protector-cables-animalitos.jpg', idCategory: 5
 },
 {
-    id: 14, stock: 30, title: 'Parlante bluetooth para ducha', description: 'Parlante para escuchar música donde quieras', price: 300.0, pictureUrl: 'parlante-bluetooth.jpg', idCategory: 5
+    id: 14, stock: 30, title: 'Parlante bluetooth para ducha', description: 'Parlante para escuchar música, resistente al agua', price: 300.0, pictureUrl: 'parlante-bluetooth.jpg', idCategory: 5
 },
 {
     id: 15, stock: 30, title: 'Reloj despertador led aurora', description: 'Reloj despertador, cambia a 7 colores, con diferentes melodías', price: 400.0, pictureUrl: 'reloj-aurora.jpg', idCategory: 5

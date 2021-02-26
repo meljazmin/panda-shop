@@ -1,7 +1,10 @@
 @import 'bootstrap';
+@import '../../styles/variables.scss';
+
+
 
 .badge-pink{
     @extend .badge-success;
     color: pink;
-    background-color: #e7475c;
+    background-color: $color-primario;
 }
