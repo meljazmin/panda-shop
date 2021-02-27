@@ -24,8 +24,9 @@ export default function CartProvider({ defaultValue = [], children }) {
         setCache((cart) => {
             if (isInCart(item.id)) {
                 const index = cart.findIndex(i => i.item.id === item.id);
-                cart[index].quantity += quantity;
-                return cart;
+                const existingItem = cart.splice(index, 1)[0];
+                existingItem.quantity += quantity;
+                return [...cart, existingItem];
             } else {
                 return [...cart, { item, quantity }];
             }
