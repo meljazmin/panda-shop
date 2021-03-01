@@ -1,45 +1,48 @@
 import Item from './Item';
-import productsMock from '../../products';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { Jumbotron } from 'react-bootstrap';
-
-let request = new Promise((resolve, reject) => {
-    
-        resolve(productsMock);
-});
+import { getCollection } from '../../firebase';
+import Loading from '../common/Loading';
 
 const ItemList = () => {
     const [products, setProducts] = useState([]);
-    const { categoryId } = useParams();
+    const location = useLocation();
+    const idCategory = location.state?.idCategory;
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
-        request.then(res => {
-            if (categoryId) {
-                setProducts(res.filter(product => product.idCategory.toString() === categoryId));
+        setLoading(true);
+        getCollection('products').then(products => {
+            if (idCategory) {
+                setProducts(products.filter(product => product.idCategory?.toString() === idCategory));
             } else {
-                setProducts(res);
+                setProducts(products);
             }
         }).catch(error => {
             console.error(error);
-        });
-    }, [categoryId]);
+        }).finally(() => setLoading(false));
+    }, [idCategory]);
 
     return (
-        <div className="container mt-1 mb-1">
-            <h1 className="text-center">Productos</h1>
-            <div className="d-flex flex-wrap justify-content-around m-5">
-                {
-                    products.map(product => {
-                        return <Item key={product.id} product={product} />
-                    })
+        <>
+            {loading && <Loading />}
+            {!loading && <div className="container mt-1 mb-1 animate__animated animate__fadeInUp">
+                <h1 className="text-center">Productos</h1>
+                <div className="d-flex flex-wrap justify-content-around m-5">
+                    {
+                        products.map(product => {
+                            return <Item key={product.id} product={product} />
+                        })
+                    }
+                </div>
+                {products.length === 0 &&
+                    <Jumbotron>
+                        <h3>No se encontaron productos con categoria {idCategory}</h3>
+                    </Jumbotron>
                 }
-            </div>
-            {products.length === 0 &&
-                <Jumbotron>
-                    <h3>No se encontaron productos con categoria {categoryId}</h3>
-                </Jumbotron>
-            }
-        </div>
+            </div>}
+        </>
     )
 }
 

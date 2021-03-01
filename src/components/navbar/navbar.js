@@ -2,24 +2,36 @@ import { Button, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-boots
 import { Link } from 'react-router-dom';
 import CartWidget from '../widgets/CartWidget';
 import './navBar.scss';
-import categoryList from '../../categories';
 import { useEffect, useState } from 'react';
+import { getCollection, getDocData, getFirestore } from '../../firebase';
+import { useErrorHandler } from 'react-error-boundary';
 
 const request = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve(categoryList);
-  }, 2000);
+  const db = getFirestore();
+  const categoryCollection = db.collection('categories');
+  categoryCollection.get().then(querySnapshot => {
+    if (querySnapshot.size === 0) {
+      console.warn('No hay categorias!');
+      resolve([]);
+    }
+    resolve(querySnapshot.docs.map(doc => getDocData(doc)));
+  });
 });
 
 const NavbarComponent = () => {
+  const handleError = useErrorHandler();
   const [categories, setCategories] = useState([]);
+
   useEffect(() => {
-    request.then(data => {
+    getCollection('categories').then(data => {
       setCategories(data);
+    }).catch(error => {
+      handleError(error);
     });
   }, []);
+
   return (
-    <Navbar  expand="lg" className="navBar">
+    <Navbar expand="lg" className="navBar">
       <Navbar.Brand href="#home" variant="text-white" as={Link} to={'/'} className="text-center">
         <img
           src="/images/logo.png"
@@ -29,14 +41,14 @@ const NavbarComponent = () => {
           alt=""
         />{' '}
         Red panda</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav"  />
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="m-auto navLinks">
           <Nav.Link as={Link} to={'/'} className="hvr-underline-from-center">Inicio</Nav.Link>
           <NavDropdown title="Productos" id="basic-nav-dropdown">
             {
               categories.map(category => {
-                return <NavDropdown.Item key={category.id} as={Link} to={`/category/${category.id}`} >{category.title}</NavDropdown.Item>
+                return <NavDropdown.Item key={category.id} as={Link} to={{ pathname: `/category/${category.title}`, state: { idCategory: category.id } }} >{category.title}</NavDropdown.Item>
               })
             }
           </NavDropdown>

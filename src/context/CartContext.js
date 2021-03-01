@@ -17,7 +17,7 @@ export default function CartProvider({ defaultValue = [], children }) {
     }, [cache]);
 
     const getItemById = (itemId) => {
-        return cache.find(item => item.item.id === parseInt(itemId));
+        return cache.find(item => item.item.id === itemId);
     }
 
     const addItem = (item, quantity) => {
