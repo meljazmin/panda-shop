@@ -1,27 +1,27 @@
 import { createContext, useEffect, useState } from 'react';
 
-export const CartContext = createContext();
+export const CartContext = createContext({});
 
 export default function CartProvider({ defaultValue = [], children }) {
-    const [cache, setCache] = useState(defaultValue);
+    const [cart, setCart] = useState(defaultValue);
 
     useEffect(() => {
         const cacheInStorage = localStorage.getItem('cart');
         if (cacheInStorage) {
-            setCache(JSON.parse(cacheInStorage));
+            setCart(JSON.parse(cacheInStorage));
         }
     }, []);
 
     useEffect(() => {
-        localStorage.setItem('cart', JSON.stringify(cache));
-    }, [cache]);
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }, [cart]);
 
     const getItemById = (itemId) => {
-        return cache.find(item => item.item.id === itemId);
+        return cart.find(item => item.item.id === itemId);
     }
 
     const addItem = (item, quantity) => {
-        setCache((cart) => {
+        setCart((cart) => {
             if (isInCart(item.id)) {
                 const index = cart.findIndex(i => i.item.id === item.id);
                 const existingItem = cart.splice(index, 1)[0];
@@ -36,14 +36,14 @@ export default function CartProvider({ defaultValue = [], children }) {
     const removeItem = (itemId) => {
         let item = getItemById(itemId);
         if (item) {
-            setCache((cart) => {
+            setCart((cart) => {
                 return cart.filter(i => i.item.id !== item.item.id);
             });
         }
     }
 
     const clear = () => {
-        setCache(defaultValue);
+        setCart(defaultValue);
     }
 
     const isInCart = (itemId) => {
@@ -53,7 +53,7 @@ export default function CartProvider({ defaultValue = [], children }) {
     const changeItemQuantity = (id, quantity) => {
         const item = getItemById(id);
         if (item) {
-            setCache((cart) => {
+            setCart((cart) => {
                 const index = cart.findIndex(i => i.item.id === item.item.id);
                 cart[index].quantity = parseInt(quantity);
                 return cart;
@@ -61,8 +61,15 @@ export default function CartProvider({ defaultValue = [], children }) {
         }
     }
 
+    const getTotal = () => {
+        return cart.reduce((acum, item) => {
+            acum += item.item.price * item.quantity;
+            return acum;
+        }, 0);
+    }
+
     return (
-        <CartContext.Provider value={{ addItem, removeItem, clear, isInCart, changeItemQuantity, cart: cache }}>
+        <CartContext.Provider value={{ addItem, removeItem, clear, isInCart, changeItemQuantity, getTotal, cart: cart }}>
             { children}
         </CartContext.Provider >
     )

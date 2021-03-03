@@ -1,13 +1,14 @@
 import { useContext, useRef } from "react";
 import { Button, Container, Jumbotron } from "react-bootstrap";
 import { FaTrash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { CartContext } from '../../context/CartContext';
 import CountWidget from "../widgets/CountWidget";
 
 const CartContainer = () => {
     const cartContext = useContext(CartContext);
     const itemContainerRef = useRef();
+    const history = useHistory();
 
     const onCartClear = () => {
         cartContext.clear();
@@ -28,6 +29,12 @@ const CartContainer = () => {
         const id = itemContainerRef.current.id;
         const quantity = count;
         cartContext.changeItemQuantity(id, quantity);
+    }
+
+    const goToOrder = (evt) => {
+        evt.preventDefault();
+
+        history.push('/order');
     }
 
     return (
@@ -68,7 +75,7 @@ const CartContainer = () => {
                                             <td className="d-flex align-items-center">
                                                 <button className="mr-2 button-as-link" onClick={onItemRemove}>Eliminar</button>
                                                 {/* <button className="mr-2 button-as-link">Guardar para despues</button> */}
-                                                <Link to={`/category/${item.item.idCategory}`}>
+                                                <Link to={{ pathname: `/category/${item.item.idCategory}`, state: { idCategory: item.item.idCategory } }}>
                                                     <button className="mr-2 button-as-link">Más productos similares</button>
                                                 </Link>
                                             </td>
@@ -87,7 +94,7 @@ const CartContainer = () => {
                                         }, 0)
                                     }
                                 </h4>
-                                <button className="btn btn-primary btn-block">Comprar</button>
+                                <button className="btn btn-primary btn-block" onClick={goToOrder}>Comprar</button>
                             </div>
                         </div>
                     </Container>

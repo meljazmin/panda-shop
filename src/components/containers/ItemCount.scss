@@ -1,10 +1,7 @@
-@import 'bootstrap';
-@import '../../styles/variables.scss';
-
-
+@import '../../App.scss';
 
 .badge-pink{
     @extend .badge-success;
     color: pink;
-    background-color: $color-primario;
+    background-color: $color-bg-primario;
 }

@@ -1,4 +1,4 @@
-// @import "./styles/variables.scss";
+@import "../../App.scss";
 
 .buttonSearch {
     color:white;
@@ -8,10 +8,10 @@
 }
 
 .navBar {
-    font-family: "Roboto", sans-serif;
-    font-weight: bolder;
-    font-size: 20px;
-    background-color: #fc6b5e;
+    // font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: larger;
+    background-color: $color-bg-terciario;
     color: #360d17;
 }
 
@@ -47,4 +47,8 @@
 }
 .hvr-underline-from-center:focus {
     color: pink;
+}
+
+.navbar-brand {
+    font-size: xx-large !important;
 }

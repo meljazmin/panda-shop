@@ -55,10 +55,6 @@ const NavbarComponent = () => {
           <Nav.Link as={Link} to={'/contacto'} className="hvr-underline-from-center">Contacto</Nav.Link>
         </Nav>
         <CartWidget />
-        <Form inline>
-          <FormControl type="text" placeholder="Buscar" className="mr-sm-2" />
-          <Button variant="dark" className="buttonSearch">Buscar</Button>
-        </Form>
       </Navbar.Collapse>
     </Navbar>
   );

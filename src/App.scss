@@ -1,17 +1,34 @@
+@import 'bootstrap';
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import "styles/variables.scss";
 
+body {
+  background-color: $color-bg-secundario !important;
+  color: $color-text-primario !important;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
 .red-panda-color {
-  color: $color-primario !important;
-  background-color: $color-primario !important;
+  color: $color-bg-primario !important;
+  background-color: $color-bg-primario !important;
 }
 
 .jumbotron {
-  background-color: #DD9E9E !important;
+  background-color: $color-bg-secundario !important;
 }
 
 .btn-primary {
-  background-color: $color-primario !important;
-  border-color: $color-primario !important;
+  background-color: $color-bg-primario !important;
+  border-color: $color-bg-primario !important;
+}
+
+a {
+  color: $color-text-primario !important;
+}
+
+a:hover {  
+  text-decoration: none;
 }
 
 .button-as-link {
@@ -28,4 +45,32 @@
 .button-as-link:hover {
   color:#fc6b5e;
   text-decoration: underline;
+}
+
+.list-group-item {
+  background-color: $color-bg-secundario !important;
+}
+
+.button2 {
+  background-color: #DD9E9E;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  // font-family: "Roboto", sans-serif;
+
+  color: black;
+  border-radius: 20px; 
+  &:hover {
+      color: white;
+      background-color: #fc6b5e;
+  }
+}
+
+
+input:hover{
+  border: 3px solid #fc6b5e;
+}
+
+.dropdown-menu {
+  background-color: $color-bg-secundario;
+  font-weight: bold !important;
 }
