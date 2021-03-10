@@ -5,9 +5,9 @@ const Loading = () => {
     return (
         <div className="container d-flex justify-content-center align-items-center animate__animated animate__fadeInUp">
             <Spinner animation="border" role="status">
-                <span className="sr-only">Loading...</span>
+                <span className="sr-only">Cargando...</span>
             </Spinner>
-            <h1>Loading...</h1>
+            <h1>Cargando...</h1>
         </div>
     )
 }

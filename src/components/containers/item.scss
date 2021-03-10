@@ -1,9 +1,10 @@
+@import '../../styles/variables.scss';
+
 .item-container {
     max-width: 300px;
 
     &:hover {
-        // background-color: #ff3852;
-        background-color: #fc6b5e;
+        background-color: $color-bg-terciario;
         font-weight: bolder;
     }
 }

@@ -6,7 +6,7 @@ body {
   background-color: $color-bg-secundario !important;
   color: $color-text-primario !important;
   font-family: "Roboto", sans-serif;
-  font-weight: 500;
+  font-weight: 200;
 }
 
 .red-panda-color {
@@ -43,7 +43,7 @@ a:hover {
 }
 
 .button-as-link:hover {
-  color:#fc6b5e;
+  color:$color-bg-terciario;
   text-decoration: underline;
 }
 
@@ -52,23 +52,23 @@ a:hover {
 }
 
 .button2 {
-  background-color: #DD9E9E;
+  background-color: $color-bg-terciario;
   margin-bottom: 20px;
   margin-left: 10px;
-  // font-family: "Roboto", sans-serif;
 
   color: black;
   border-radius: 20px; 
   &:hover {
       color: white;
-      background-color: #fc6b5e;
+      background-color: #caacb9;
   }
 }
 
 
 input:hover{
-  border: 3px solid #fc6b5e;
+  border: $color-bg-terciario;
 }
+
 
 .dropdown-menu {
   background-color: $color-bg-secundario;

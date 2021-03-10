@@ -153,12 +153,12 @@ const Order = () => {
                                         </div>
                                         <div className="form-group mt-3">
                                             <label htmlFor="inputEmail">Email</label>
-                                            <input type="email" className="form-control" id="inputEmail" placeholder="usuario@email.com" onChange={handleBuyerFormInput} />
+                                            <input type="email" className="form-control" id="inputEmail" placeholder="Email" onChange={handleBuyerFormInput} />
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="inputAddress">Direccion</label>
-                                            <input type="text" className="form-control" id="inputAddress" placeholder="Calle 123" onChange={handleBuyerFormInput} />
-                                            <input type="text" className="form-control" id="inputAddress2" placeholder="Piso 11 Depto D" onChange={handleBuyerFormInput} />
+                                            <input type="text" className="form-control" id="inputAddress" placeholder="Dirección" onChange={handleBuyerFormInput} />
+                                            <input type="text" className="form-control" id="inputAddress2" placeholder="Piso" onChange={handleBuyerFormInput} />
                                         </div>
                                         <div className="form-row">
                                             <div className="form-group col-sm-4">
@@ -192,7 +192,7 @@ const Order = () => {
                                 </label>
                                             </div>
                                         </div>
-                                        <button type="submit" className="btn btn-primary btn-block">Finalizar compra</button>
+                                        <button type="submit" className="btn button2 btn-block">Finalizar compra</button>
                                     </form>
                                 </div>
                                 <div className="col-sm-6">
@@ -220,9 +220,9 @@ const Order = () => {
                 </Modal.Header>
                 <Modal.Body>{modal.body}</Modal.Body>
                 <Modal.Footer>
-                    <Button variant="primary" onClick={modal.closeHandler}>
+                    <button className="btn button2" onClick={modal.closeHandler}>
                         Continuar
-                            </Button>
+                            </button>
                 </Modal.Footer>
             </Modal>
         </>

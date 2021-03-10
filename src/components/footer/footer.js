@@ -12,6 +12,7 @@ const FooterComponent = () => {
         <footer id="footer">
             <div className="d-flex justify-content-around">
                 <div className="p-2">
+                    <h2>Panda Shop</h2>
                     <ul className="mb-7">
                         <li className="item px-3">
                             <Link className="link" to={'/'}>Productos</Link>
@@ -23,8 +24,8 @@ const FooterComponent = () => {
                 </div>
                 <div className="p-2">
                     <h2>Contacto</h2>
-                    <div><FaPhoneAlt /> +54 9 1556967705</div>
-                    <div><FaEnvelope /> redpanda-objetoscreativos@gmail.com</div>
+                    <div><FaPhoneAlt /> 19080-10</div>
+                    <div><FaEnvelope /> pandashop-objetoscreativos@gmail.com</div>
                 </div>
                 <div className="p-2">
                     <h2>Seguinos!</h2><br />
@@ -36,7 +37,7 @@ const FooterComponent = () => {
                 </div>
             </div>
             <div className="text-center footer-description">
-                <p>Red Panda <FaTrademark /> 2020</p>
+                <p>Panda Shop <FaTrademark /> 2020</p>
                 <p>Creado por Melanie Monti <a href="http://github.com/meljazmin"><FaGithub className="faIcons" /></a></p>
             </div>
         </footer> 

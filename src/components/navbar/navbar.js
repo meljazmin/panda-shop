@@ -40,7 +40,7 @@ const NavbarComponent = () => {
           className="d-inline-block align-top"
           alt=""
         />{' '}
-        Red panda</Navbar.Brand>
+        Panda Shop</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="m-auto navLinks">

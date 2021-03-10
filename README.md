@@ -1,1 +1,1 @@
-Red Panda
+Panda Shop

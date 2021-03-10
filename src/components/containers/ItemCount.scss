@@ -1,7 +1,8 @@
 @import '../../App.scss';
+@import '../../styles/variables.scss';
 
 .badge-pink{
     @extend .badge-success;
-    color: pink;
-    background-color: $color-bg-primario;
+    color:  #521423;
+    background-color: $color-bg-terciario;
 }

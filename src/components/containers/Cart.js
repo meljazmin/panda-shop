@@ -4,6 +4,7 @@ import { FaTrash } from "react-icons/fa";
 import { Link, useHistory } from "react-router-dom";
 import { CartContext } from '../../context/CartContext';
 import CountWidget from "../widgets/CountWidget";
+ 
 
 const CartContainer = () => {
     const cartContext = useContext(CartContext);
@@ -94,7 +95,7 @@ const CartContainer = () => {
                                         }, 0)
                                     }
                                 </h4>
-                                <button className="btn btn-primary btn-block" onClick={goToOrder}>Comprar</button>
+                                <button className="btn button2 btn-block" onClick={goToOrder}>Comprar</button>
                             </div>
                         </div>
                     </Container>
@@ -105,7 +106,7 @@ const CartContainer = () => {
                     <Jumbotron className="mt-5">
                         <h1>No hay items en el carrito</h1>
                         <Link to={'/'}>
-                            <Button className="button2">Seguir comprando</Button>
+                            <button className=" btn button2">Seguir comprando</button>
                         </Link>
                     </Jumbotron>
                 </>

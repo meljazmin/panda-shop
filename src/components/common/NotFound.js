@@ -1,6 +1,7 @@
 import { Col, Container, Image, Jumbotron, Row } from "react-bootstrap"
 import { useLocation } from "react-router-dom";
 
+
 const NotFound = () => {
     const location = useLocation();
     return (
