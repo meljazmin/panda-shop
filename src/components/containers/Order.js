@@ -106,7 +106,6 @@ const Order = () => {
         }).then(() => {
             setLoading(true);
             ordersCollection.add(newOrder).then(({ id }) => {
-                // alert(`Se ha generado su orden con identificacion ${id}`);
                 setOrder({ ...newOrder, id });
                 cartContext.clear();
                 setModal({
@@ -144,26 +143,26 @@ const Order = () => {
                                         <div className="form-row">
                                             <div className="col">
                                                 <label htmlFor="inputFirstName">Nombre</label>
-                                                <input type="text" className="form-control" id="inputFirstName" placeholder="Nombre" onChange={handleBuyerFormInput} />
+                                                <input type="text" className="form-control" id="inputFirstName" placeholder="Nombre" onChange={handleBuyerFormInput}  required/>
                                             </div>
                                             <div className="col">
                                                 <label htmlFor="inputLastName">Apellido</label>
-                                                <input type="text" className="form-control" id="inputLastName" placeholder="Apellido" onChange={handleBuyerFormInput} />
+                                                <input type="text" className="form-control" id="inputLastName" placeholder="Apellido" onChange={handleBuyerFormInput} required />
                                             </div>
                                         </div>
                                         <div className="form-group mt-3">
                                             <label htmlFor="inputEmail">Email</label>
-                                            <input type="email" className="form-control" id="inputEmail" placeholder="Email" onChange={handleBuyerFormInput} />
+                                            <input type="email" className="form-control" id="inputEmail" placeholder="Email" onChange={handleBuyerFormInput} required />
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="inputAddress">Direccion</label>
-                                            <input type="text" className="form-control" id="inputAddress" placeholder="Dirección" onChange={handleBuyerFormInput} />
-                                            <input type="text" className="form-control" id="inputAddress2" placeholder="Piso" onChange={handleBuyerFormInput} />
+                                            <input type="text" className="form-control" id="inputAddress" placeholder="Dirección" onChange={handleBuyerFormInput} required />
+                                            <input type="text" className="form-control" id="inputAddress2" placeholder="Piso" onChange={handleBuyerFormInput} required />
                                         </div>
                                         <div className="form-row">
                                             <div className="form-group col-sm-4">
                                                 <label htmlFor="inputState">Provincia</label>
-                                                <select id="inputState" className="form-control" onChange={handleBuyerFormInput}>
+                                                <select id="inputState" className="form-control" onChange={handleBuyerFormInput} required>
                                                     <option value=''>Seleccionar provincia</option>
                                                     {provincias && provincias.map(provincia => {
                                                         return <option key={provincia.id} value={provincia.id}>{provincia.nombre}</option>;
@@ -172,7 +171,7 @@ const Order = () => {
                                             </div>
                                             <div className="form-group col-sm-5">
                                                 <label htmlFor="inputCity">Localidad</label>
-                                                <select id="inputCity" className="form-control" onChange={handleBuyerFormInput}>
+                                                <select id="inputCity" className="form-control" onChange={handleBuyerFormInput} required>
                                                     <option value=''>Seleccionar localidad</option>
                                                     {localidades && localidades.map(provincia => {
                                                         return <option key={provincia.id} value={provincia.id}>{provincia.nombre}</option>;
@@ -181,7 +180,7 @@ const Order = () => {
                                             </div>
                                             <div className="form-group col-sm-3">
                                                 <label htmlFor="inputZipCode">Codigo postal</label>
-                                                <input type="text" className="form-control" id="inputZipCode" onChange={handleBuyerFormInput} />
+                                                <input type="text" className="form-control" id="inputZipCode" onChange={handleBuyerFormInput} required />
                                             </div>
                                         </div>
                                         <div className="form-group">

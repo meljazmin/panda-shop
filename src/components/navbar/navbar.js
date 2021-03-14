@@ -1,4 +1,4 @@
-import { Button, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import CartWidget from '../widgets/CartWidget';
 import './navBar.scss';
