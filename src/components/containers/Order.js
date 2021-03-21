@@ -16,6 +16,7 @@ const Order = () => {
     const [loading, setLoading] = useState(false);
     const [modal, setModal] = useState({ show: false, title: '', body: '', closeHandler: () => { } });
     const [order, setOrder] = useState({ id: null, buyer: null, items: null, date: null });
+    const [isEmailConfirmed, setIsEmailConfirmed] = useState(null);
 
     const [provincias, setProvincias] = useState([]);
     const [localidades, setLocalidades] = useState([]);
@@ -130,6 +131,16 @@ const Order = () => {
         });
     }
 
+    const confirmEmail = (evt) => {
+        const { value } = evt.target;
+
+        if (value === customerInfo.email) {
+            setIsEmailConfirmed(true)
+        } else {
+            setIsEmailConfirmed(false)
+        }
+    }
+
     return (
         <>
             {loading && <Loading />}
@@ -143,7 +154,7 @@ const Order = () => {
                                         <div className="form-row">
                                             <div className="col">
                                                 <label htmlFor="inputFirstName">Nombre</label>
-                                                <input type="text" className="form-control" id="inputFirstName" placeholder="Nombre" onChange={handleBuyerFormInput}  required/>
+                                                <input type="text" className="form-control" id="inputFirstName" placeholder="Nombre" onChange={handleBuyerFormInput} required />
                                             </div>
                                             <div className="col">
                                                 <label htmlFor="inputLastName">Apellido</label>
@@ -153,6 +164,14 @@ const Order = () => {
                                         <div className="form-group mt-3">
                                             <label htmlFor="inputEmail">Email</label>
                                             <input type="email" className="form-control" id="inputEmail" placeholder="Email" onChange={handleBuyerFormInput} required />
+                                        </div>
+                                        <div className="form-group mt-3">
+                                            <label htmlFor="inputConfirmEmail">Confirmar Email</label>
+                                            <input type="text" className="form-control" id="inputConfirmEmail" placeholder="Email" onBlur={confirmEmail} autoComplete="off" required />
+                                            <small id="confirmEmailMessage" style={{ display: isEmailConfirmed === null ? 'none' : 'block' }}>
+                                                {isEmailConfirmed && <div style={{ color: 'green' }}>Email confirmado</div>}
+                                                {!isEmailConfirmed && <div style={{ color: 'red' }}>El email no es el mismo</div>}
+                                            </small>
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="inputAddress">Direccion</label>
@@ -191,7 +210,7 @@ const Order = () => {
                                 </label>
                                             </div>
                                         </div>
-                                        <button type="submit" className="btn button2 btn-block">Finalizar compra</button>
+                                        <button type="submit" className="btn button2 btn-block" disabled={!isEmailConfirmed}>Finalizar compra</button>
                                     </form>
                                 </div>
                                 <div className="col-sm-6">
