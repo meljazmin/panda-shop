@@ -167,7 +167,7 @@ const Order = () => {
                                         </div>
                                         <div className="form-group mt-3">
                                             <label htmlFor="inputConfirmEmail">Confirmar Email</label>
-                                            <input type="text" className="form-control" id="inputConfirmEmail" placeholder="Email" onBlur={confirmEmail} autoComplete="off" required />
+                                            <input type="text" className="form-control" id="inputConfirmEmail" placeholder="Email" onBlur={confirmEmail} autocomplete="off" required />
                                             <small id="confirmEmailMessage" style={{ display: isEmailConfirmed === null ? 'none' : 'block' }}>
                                                 {isEmailConfirmed && <div style={{ color: 'green' }}>Email confirmado</div>}
                                                 {!isEmailConfirmed && <div style={{ color: 'red' }}>El email no es el mismo</div>}
