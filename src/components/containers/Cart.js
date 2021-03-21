@@ -1,5 +1,5 @@
 import { useContext, useRef } from "react";
-import { Button, Container, Jumbotron } from "react-bootstrap";
+import {Container, Jumbotron } from "react-bootstrap";
 import { FaTrash } from "react-icons/fa";
 import { Link, useHistory } from "react-router-dom";
 import { CartContext } from '../../context/CartContext';
@@ -43,7 +43,7 @@ const CartContainer = () => {
 
             {(cartContext.cart && cartContext.cart.length > 0) && (
                 <>
-                    {/* <button className="btn btn-danger" onClick={onCartClear}><FaTrash /></button> */}
+                    <button className="btn button-2" onClick={onCartClear}><FaTrash /></button>
                     <Container>
                         <table className="table text-center">
                             <thead>
@@ -67,15 +67,12 @@ const CartContainer = () => {
                                             </td>
                                             <td className="align-middle-center">
                                                 <h4>{item.quantity}</h4>
-                                                {/* <input type="number" min="0" value={item.quantity} onChange={onItemQuantityChange} /> */}
-                                                {/* <CountWidget initial={item.quantity} stock={item.stock} onIncrease={onCountChange} onDecrease={onCountChange} /> */}
                                             </td>
                                             <td className="align-middle-center">
                                                 <h4>${item.item.price * item.quantity}</h4>
                                             </td>
                                             <td className="d-flex align-items-center">
                                                 <button className="mr-2 button-as-link" onClick={onItemRemove}>Eliminar</button>
-                                                {/* <button className="mr-2 button-as-link">Guardar para despues</button> */}
                                                 <Link to={{ pathname: `/category/${item.item.idCategory}`, state: { idCategory: item.item.idCategory } }}>
                                                     <button className="mr-2 button-as-link">Más productos similares</button>
                                                 </Link>

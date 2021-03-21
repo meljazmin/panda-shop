@@ -1,11 +1,6 @@
 import { FaEnvelope, FaFacebook, FaGithub, FaInstagram, FaPhoneAlt, FaTrademark, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import WhatsApp from "../whatsapp/whatsapp";
 import './footer.scss';
-
-const footerStyle = {
-    backgroundImage: 'url("/images/fondo-panda.jpg")'
-}
 
 const FooterComponent = () => {
     return (

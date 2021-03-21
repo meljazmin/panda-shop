@@ -1,6 +1,6 @@
 import Item from './Item';
 import { useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation} from 'react-router-dom';
 import { Jumbotron } from 'react-bootstrap';
 import { getCollection } from '../../firebase';
 import Loading from '../common/Loading';
@@ -27,7 +27,7 @@ const ItemList = () => {
     return (
         <>
             {loading && <Loading />}
-            {!loading && <div className="container mt-1 mb-1 animate__animated animate__fadeInUp">
+            {!loading && <div className="container mt-1 mb-1 animate__animated animate__fadeInUp 5s">
                 <h1 className="text-center">Productos</h1>
                 <div className="d-flex flex-wrap justify-content-around m-5">
                     {
