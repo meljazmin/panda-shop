@@ -1,14 +1,13 @@
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import {Container, Jumbotron } from "react-bootstrap";
 import { FaTrash } from "react-icons/fa";
 import { Link, useHistory } from "react-router-dom";
 import { CartContext } from '../../context/CartContext';
-import CountWidget from "../widgets/CountWidget";
+
  
 
 const CartContainer = () => {
     const cartContext = useContext(CartContext);
-    const itemContainerRef = useRef();
     const history = useHistory();
 
     const onCartClear = () => {
@@ -18,18 +17,6 @@ const CartContainer = () => {
     const onItemRemove = (evt) => {
         const id = evt.target.closest('tr').id;
         cartContext.removeItem(id);
-    }
-
-    const onItemQuantityChange = (evt) => {
-        const id = itemContainerRef.current.id;
-        const quantity = evt.target.value;
-        cartContext.changeItemQuantity(id, quantity);
-    }
-
-    const onCountChange = (count) => {
-        const id = itemContainerRef.current.id;
-        const quantity = count;
-        cartContext.changeItemQuantity(id, quantity);
     }
 
     const goToOrder = (evt) => {

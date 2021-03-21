@@ -5,7 +5,7 @@ import { getCollection, getFirestore } from "../../firebase";
 import firebase from 'firebase/app';
 import Loading from "../common/Loading";
 import { useHistory } from "react-router-dom";
-import { Button, Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 
 const Order = () => {
     const errorHandler = useErrorHandler();
