@@ -110,7 +110,7 @@ const Order = () => {
                 cartContext.clear();
                 setModal({
                     show: true,
-                    title: '¡Su orden se realizado correctamente!',
+                    title: '¡Su orden ha se realizado correctamente!',
                     body: `Se ha generado su orden con identificacion ${id}`,
                     closeHandler: () => {
                         history.push('/');
